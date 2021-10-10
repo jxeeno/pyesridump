@@ -35,10 +35,16 @@ def _parse_args(args):
     parser.add_argument("--proxy",
         help="Proxy string to send requests through ie: https://example.com/proxy.ashx?<SERVER>")
     parser.add_argument("--pauseseconds",
+        type=int,
+        default=5,
         help="Number of seconds to wait for during pause")
     parser.add_argument("--requeststopause",
+        type=int,
+        default=10,
         help="Number of requests after which a pause will occur")
     parser.add_argument("--startwith",
+        type=int,
+        default=None,
         help="Start with")
     parser.add_argument("--jsonlines",
         action='store_true',
