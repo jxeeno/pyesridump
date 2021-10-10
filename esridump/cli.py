@@ -34,6 +34,12 @@ def _parse_args(args):
         help="Output file name (use - for stdout)")
     parser.add_argument("--proxy",
         help="Proxy string to send requests through ie: https://example.com/proxy.ashx?<SERVER>")
+    parser.add_argument("--pauseseconds",
+        help="Number of seconds to wait for during pause")
+    parser.add_argument("--requeststopause",
+        help="Number of requests after which a pause will occur")
+    parser.add_argument("--startwith",
+        help="Start with")
     parser.add_argument("--jsonlines",
         action='store_true',
         default=False,
@@ -99,6 +105,9 @@ def main():
         fields=requested_fields,
         request_geometry=args.request_geometry,
         proxy=args.proxy,
+        start_with=args.startwith,
+        pause_seconds=args.pauseseconds,
+        requests_to_pause=args.requeststopause,
         timeout=args.timeout,
         parent_logger=logger,
         paginate_oid=args.paginate_oid)
