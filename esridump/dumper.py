@@ -352,7 +352,7 @@ class EsriDumper(object):
                     (oid_min, oid_max) = self._get_layer_min_max(oid_field_name)
                     
                     if self._startWith:
-                        oid_min = self._startWith - 1
+                        oid_min = self._startWith + 1
 
                     for page_min in range(oid_min - 1, oid_max, page_size):
                         page_max = min(page_min + page_size, oid_max)
